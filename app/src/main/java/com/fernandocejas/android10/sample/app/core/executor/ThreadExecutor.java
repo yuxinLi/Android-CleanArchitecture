@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.app;
+package com.fernandocejas.android10.sample.app.core.executor;
 
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.annotation.Config;
+import java.util.concurrent.Executor;
 
 /**
- * Base class for Robolectric data layer tests.
- * Inherit from this class to create a test.
+ * Executor implementation can be based on different frameworks or techniques of asynchronous
+ * execution, but every implementation will execute UseCases out of the UI thread.
  */
-@RunWith(RobolectricGradleTestRunner.class)
-@Config(constants = BuildConfig.class, application = ApplicationStub.class, sdk = 21)
-public abstract class ApplicationTestCase {}
+public interface ThreadExecutor extends Executor {}

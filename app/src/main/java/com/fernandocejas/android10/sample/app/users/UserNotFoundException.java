@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,16 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fernandocejas.android10.sample.app;
-
-import org.junit.runner.RunWith;
-import org.robolectric.RobolectricGradleTestRunner;
-import org.robolectric.annotation.Config;
+package com.fernandocejas.android10.sample.app.users;
 
 /**
- * Base class for Robolectric data layer tests.
- * Inherit from this class to create a test.
+ * Exception throw by the application when a User search can't return a valid result.
  */
-@RunWith(RobolectricGradleTestRunner.class)
-@Config(constants = BuildConfig.class, application = ApplicationStub.class, sdk = 21)
-public abstract class ApplicationTestCase {}
+public class UserNotFoundException extends Exception {
+
+  public UserNotFoundException() {
+    super();
+  }
+
+  public UserNotFoundException(final String message) {
+    super(message);
+  }
+
+  public UserNotFoundException(final String message, final Throwable cause) {
+    super(message, cause);
+  }
+
+  public UserNotFoundException(final Throwable cause) {
+    super(cause);
+  }
+}
