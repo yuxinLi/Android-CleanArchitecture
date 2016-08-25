@@ -27,7 +27,9 @@ import rx.functions.Action1;
  */
 class CloudUserDataStore implements UserDataStore {
 
+  /**是 RestApiImpl 的实例*/
   private final RestApi restApi;
+  /**是 UserCacheImpl 的实例*/
   private final UserCache userCache;
 
   private final Action1<UserEntity> saveToCacheAction = userEntity -> {

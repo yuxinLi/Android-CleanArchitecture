@@ -28,8 +28,17 @@ import rx.Observable;
  */
 public class GetUserList extends UseCase {
 
+  /**在 ApplicationComponent 里面的 ApplicationModule 的 provideUserRepository实例化 ， 是 UserDataRepository 的实例*/
   private final UserRepository userRepository;
 
+  /**
+   *
+   * @param userRepository
+   * @param threadExecutor
+   *          在 ApplicationComponent 里面的 ApplicationModule 的 provideThreadExecutor ， 是 JobExecutor 的实例
+   * @param postExecutionThread
+   *          在 ApplicationComponent 里面的 ApplicationModule 的 providePostExecutionThread ， 是 UIThread 的实例
+   */
   @Inject
   public GetUserList(UserRepository userRepository, ThreadExecutor threadExecutor,
       PostExecutionThread postExecutionThread) {

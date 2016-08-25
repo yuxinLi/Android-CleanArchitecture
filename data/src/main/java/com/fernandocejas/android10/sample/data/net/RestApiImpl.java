@@ -72,9 +72,11 @@ public class RestApiImpl implements RestApi {
 
   @RxLogObservable
   @Override public Observable<UserEntity> userEntityById(final int userId) {
+
     return Observable.create(subscriber -> {
       if (isThereInternetConnection()) {
         try {
+
           String responseUserDetails = getUserDetailsFromApi(userId);
           if (responseUserDetails != null) {
             subscriber.onNext(userEntityJsonMapper.transformUserEntity(responseUserDetails));

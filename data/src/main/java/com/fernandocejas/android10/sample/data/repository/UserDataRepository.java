@@ -31,7 +31,9 @@ import rx.Observable;
 @Singleton
 public class UserDataRepository implements UserRepository {
 
+  /**构造函数有 @Inject 标示*/
   private final UserDataStoreFactory userDataStoreFactory;
+  /**构造函数有 @Inject 标示*/
   private final UserEntityDataMapper userEntityDataMapper;
 
   /**
@@ -48,7 +50,7 @@ public class UserDataRepository implements UserRepository {
   }
 
   @Override public Observable<List<User>> users() {
-    //we always get all users from the cloud
+    //we always get all users from the cloud , 是 CloudUserDataStore 的实例
     final UserDataStore userDataStore = this.userDataStoreFactory.createCloudDataStore();
     return userDataStore.userEntityList().map(this.userEntityDataMapper::transform);
   }

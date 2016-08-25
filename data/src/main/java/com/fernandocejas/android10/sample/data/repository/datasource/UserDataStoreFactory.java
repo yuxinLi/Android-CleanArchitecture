@@ -30,7 +30,9 @@ import javax.inject.Singleton;
 @Singleton
 public class UserDataStoreFactory {
 
+  /**在 ApplicationComponent 里面的 ApplicationModule 的 provideApplicationContext 实例化 ， 是 ApplicationContext 的实例*/
   private final Context context;
+  /**在 ApplicationComponent 里面的 ApplicationModule 的 provideUserCache 实例化 ， 是 UserCacheImpl 的实例*/
   private final UserCache userCache;
 
   @Inject
@@ -56,6 +58,7 @@ public class UserDataStoreFactory {
 
   /**
    * Create {@link UserDataStore} to retrieve data from the Cloud.
+   * 返回 CloudUserDataStore 实例
    */
   public UserDataStore createCloudDataStore() {
     UserEntityJsonMapper userEntityJsonMapper = new UserEntityJsonMapper();
