@@ -40,7 +40,9 @@ public class UserListPresenter implements Presenter {
 
   private UserListView viewListView;
 
-  /** 在 UserComponent 的 UserModule 的 provideGetUserListUseCase返回，实际是 GetUserList 实例*/
+  /** 在 UserComponent 的 UserModule 的 provideGetUserListUseCase返回，实际是 GetUserList 实例,
+   *  UseCase、GetUserList 是 Domain层的东西
+   * */
   private final UseCase getUserListUseCase;
   /** 构造里面有 @Inject*/
   private final UserModelDataMapper userModelDataMapper;

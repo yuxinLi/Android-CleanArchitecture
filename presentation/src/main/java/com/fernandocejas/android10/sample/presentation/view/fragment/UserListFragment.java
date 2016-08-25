@@ -14,9 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import butterknife.Bind;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
+
 import com.fernandocejas.android10.sample.presentation.R;
 import com.fernandocejas.android10.sample.presentation.internal.di.components.UserComponent;
 import com.fernandocejas.android10.sample.presentation.model.UserModel;
@@ -24,8 +22,14 @@ import com.fernandocejas.android10.sample.presentation.presenter.UserListPresent
 import com.fernandocejas.android10.sample.presentation.view.UserListView;
 import com.fernandocejas.android10.sample.presentation.view.adapter.UsersAdapter;
 import com.fernandocejas.android10.sample.presentation.view.adapter.UsersLayoutManager;
+
 import java.util.Collection;
+
 import javax.inject.Inject;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Fragment that shows a list of Users.
@@ -39,7 +43,9 @@ public class UserListFragment extends BaseFragment implements UserListView {
     void onUserClicked(final UserModel userModel);
   }
 
+  /**构造函数有 @Inject*/
   @Inject UserListPresenter userListPresenter;
+  /**构造函数有 @Inject*/
   @Inject UsersAdapter usersAdapter;
 
   @Bind(R.id.rv_users) RecyclerView rv_users;
