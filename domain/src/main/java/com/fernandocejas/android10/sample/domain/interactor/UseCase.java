@@ -33,7 +33,9 @@ import rx.subscriptions.Subscriptions;
  */
 public abstract class UseCase {
 
+  /**在 ApplicationComponent 里面的 ApplicationModule 的 provideThreadExecutor ， 是 JobExecutor 的实例*/
   private final ThreadExecutor threadExecutor;
+  /**在 ApplicationComponent 里面的 ApplicationModule 的 providePostExecutionThread ， 是 UIThread 的实例*/
   private final PostExecutionThread postExecutionThread;
 
   private Subscription subscription = Subscriptions.empty();
@@ -46,6 +48,8 @@ public abstract class UseCase {
 
   /**
    * Builds an {@link rx.Observable} which will be used when executing the current {@link UseCase}.
+   *
+   * 这里就是 Domain层调用 data层 , 实现类是调用了 data 里面的 Repository 获取数据
    */
   protected abstract Observable buildUseCaseObservable();
 
