@@ -53,6 +53,7 @@ public class UserListFragment extends BaseFragment implements UserListView {
   @Bind(R.id.rl_retry) RelativeLayout rl_retry;
   @Bind(R.id.bt_retry) Button bt_retry;
 
+  /** UserListActivity */
   private UserListListener userListListener;
 
   public UserListFragment() {
